@@ -13,77 +13,24 @@ import { GovernanceBadges } from "@/components/GovernanceBadges";
 import { SectionHeader } from "@/components/SectionHeader";
 import { StatCard } from "@/components/StatCard";
 import { AnimatedSection } from "@/components/AnimatedSection";
-import { motion, useReducedMotion } from "framer-motion";
-import Image from "next/image";
+import { Hero } from "@/components/Hero";
 import { Globe2, TrendingUp, Award } from "lucide-react";
-
-function HeroContent() {
-  const shouldReduceMotion = useReducedMotion();
-
-  return (
-    <div className="grid lg:grid-cols-2 gap-12 items-center">
-      <motion.div
-        initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.6 }}
-      >
-        <h1 className="font-heading font-bold mb-6 text-on-dark text-balance">
-          UK–Pakistan Tech Council
-        </h1>
-        <p className="text-xl md:text-2xl mb-4 text-on-dark font-medium">
-          Bridging Innovation. Uniting Talent. Empowering Futures.
-        </p>
-        <p className="muted-on-dark mb-8 text-lg leading-relaxed max-w-xl">
-          A strategic platform strengthening technology, innovation, and digital trade between the United Kingdom and Pakistan.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4">
-          <Button href="/about" variant="primary" size="lg" showArrow>
-            Explore the Council
-          </Button>
-          <Button 
-            href="https://portal.example.com" 
-            variant="secondary" 
-            size="lg" 
-            showArrow 
-            className="border-on-dark text-on-dark hover:bg-on-dark hover:text-dark"
-          >
-            Access Member and Partner Portal
-          </Button>
-        </div>
-      </motion.div>
-      <motion.div
-        initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.8, delay: 0.2 }}
-        className="relative"
-      >
-        <div className="aspect-square rounded-2xl surface-dark-2 border border-dark p-12 flex items-center justify-center relative overflow-hidden">
-          <div className="absolute inset-0 bg-hero-glow opacity-40" />
-          <div className="absolute inset-0 bg-grid-pattern opacity-10" />
-          <div className="relative z-10 w-full h-full flex items-center justify-center">
-            <div className="relative w-48 h-48 md:w-64 md:h-64">
-              <Image
-                src="/image/Main Logo/mainlogo.jpeg"
-                alt="UPTECH Logo"
-                fill
-                className="object-contain"
-                unoptimized
-              />
-            </div>
-          </div>
-        </div>
-      </motion.div>
-    </div>
-  );
-}
 
 export default function Home() {
   return (
-    <div className="pt-20">
+    <div>
       {/* Hero */}
-      <Section variant="dark" className="relative overflow-hidden">
-        <HeroContent />
-      </Section>
+      <Hero />
+
+      {/* Sponsor Marquee */}
+      <section className="bg-[#050B14] border-t border-[rgba(234,242,255,0.08)]">
+        <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8 py-12">
+          <h3 className="text-center text-[rgba(234,242,255,0.6)] text-sm font-medium mb-6 uppercase tracking-wider">
+            Trusted by Leading Organizations
+          </h3>
+          <SponsorMarquee />
+        </div>
+      </section>
 
       {/* Authority and Trust */}
       <Section>
@@ -94,10 +41,10 @@ export default function Home() {
                 title="Authority and Trust"
                 align="left"
               />
-              <p className="text-lg muted-on-light leading-relaxed mb-6">
+              <p className="text-lg text-[rgba(11,18,32,0.68)] leading-relaxed mb-6">
                 The UK–Pakistan Technology Council (UPTECH) is a bilateral initiative connecting governments, enterprises, investors, startups, and academia to drive technology-led growth.
               </p>
-              <p className="muted-on-light leading-relaxed">
+              <p className="text-[rgba(11,18,32,0.68)] leading-relaxed">
                 Built by professionals, entrepreneurs, and technology leaders committed to ethical governance and long-term impact across both nations.
               </p>
             </div>
@@ -106,14 +53,6 @@ export default function Home() {
             <TrustCards />
           </AnimatedSection>
         </div>
-        <AnimatedSection>
-          <div className="pt-8">
-            <h3 className="font-heading font-semibold text-lg mb-6 text-center muted-on-light">
-              Trusted by Leading Organizations
-            </h3>
-            <SponsorMarquee />
-          </div>
-        </AnimatedSection>
       </Section>
 
       {/* What We Do */}
@@ -163,17 +102,17 @@ export default function Home() {
             />
             <div className="grid md:grid-cols-3 gap-8">
               <StatCard
-                icon={<Globe2 className="w-8 h-8 text-primary" />}
+                icon={<Globe2 className="w-8 h-8 text-[#1E40AF]" />}
                 title="Strong Diaspora"
                 description="Strong Pakistani tech diaspora in the UK"
               />
               <StatCard
-                icon={<TrendingUp className="w-8 h-8 text-accent-teal" />}
+                icon={<TrendingUp className="w-8 h-8 text-[#00B140]" />}
                 title="Rapid Growth"
                 description="Rapid growth of Pakistan's IT exports"
               />
               <StatCard
-                icon={<Award className="w-8 h-8 text-primary" />}
+                icon={<Award className="w-8 h-8 text-[#E11D48]" />}
                 title="UK Leadership"
                 description="UK leadership in AI and enterprise technology"
               />
@@ -243,8 +182,8 @@ export default function Home() {
       <Section>
         <AnimatedSection>
           <div className="max-w-5xl mx-auto">
-            <div className="surface-light rounded-2xl border-2 border-primary/20 p-12 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent-teal/5" />
+            <div className="bg-white rounded-2xl border-2 border-[#1E40AF]/20 p-12 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#1E40AF]/8 via-[#00B140]/6 to-[#E11D48]/6" />
               <div className="relative z-10 text-center">
                 <SectionHeader
                   title="Member and Partner Portal"

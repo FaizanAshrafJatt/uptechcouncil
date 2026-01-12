@@ -13,14 +13,12 @@ export function StatCard({ icon, title, description, variant = "light", classNam
   return (
     <Card hover variant={variant} className={`text-center ${className}`}>
       {icon && (
-        <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+        <div className="w-16 h-16 rounded-xl bg-[#1E40AF]/10 flex items-center justify-center mx-auto mb-4">
           {icon}
         </div>
       )}
-      <h3 className="font-heading font-semibold text-xl mb-2">{title}</h3>
-      <p className={variant === "dark" ? "muted-on-dark text-sm" : "muted-on-light text-sm"}>
-        {description}
-      </p>
+      <h3 className="font-heading font-semibold text-xl mb-2 text-[#0B1220]">{title}</h3>
+      <p className="text-[rgba(11,18,32,0.68)] text-sm">{description}</p>
     </Card>
   );
 }

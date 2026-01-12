@@ -10,43 +10,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Neutrals
-        neutral: {
-          900: "var(--neutral-900)",
-          800: "var(--neutral-800)",
-          700: "var(--neutral-700)",
-        },
-        // Brand
+        // Direct brand colors that will override default
         primary: {
-          DEFAULT: "var(--primary)",
-          hover: "var(--primary-hover)",
-          foreground: "var(--primary-foreground)",
+          DEFAULT: "#1E40AF",
+          hover: "#1E3A8A",
+          foreground: "#FFFFFF",
         },
-        // Accents
         accent: {
-          "uk-red": "var(--accent-uk-red)",
-          "pakistan-green": "var(--accent-pakistan-green)",
-          teal: "var(--accent-teal)",
-        },
-        // Light mode
-        light: {
-          bg: "var(--bg-light)",
-          surface: "var(--surface-light)",
-          "surface-2": "var(--surface-light-2)",
-          text: "var(--text-on-light)",
-          muted: "var(--muted-on-light)",
-          border: "var(--border-light)",
-        },
-        // Dark mode
-        dark: {
-          bg: "var(--neutral-900)",
-          "bg-2": "var(--neutral-800)",
-          surface: "var(--surface-dark)",
-          "surface-2": "var(--surface-dark-2)",
-          text: "var(--text-on-dark)",
-          muted: "var(--muted-on-dark)",
-          "muted-subtle": "var(--muted-on-dark-subtle)",
-          border: "var(--border-dark)",
+          "uk-red": "#E11D48",
+          "pakistan-green": "#00B140",
         },
       },
       fontFamily: {
@@ -57,22 +29,20 @@ const config: Config = {
         content: "1280px",
       },
       borderRadius: {
-        sm: "var(--radius-sm)",
-        md: "var(--radius-md)",
-        lg: "var(--radius-lg)",
-        xl: "var(--radius-xl)",
-        card: "var(--radius-lg)",
-      },
-      boxShadow: {
-        sm: "var(--shadow-sm)",
-        md: "var(--shadow-md)",
-        lg: "var(--shadow-lg)",
-        "glow-primary": "var(--shadow-glow-primary)",
-        "glow-teal": "var(--shadow-glow-teal)",
+        sm: "8px",
+        md: "12px",
+        lg: "16px",
+        xl: "24px",
+        card: "16px",
       },
       spacing: {
         section: "5rem",
         "section-lg": "7rem",
+      },
+      boxShadow: {
+        "glow-primary": "0 0 24px rgba(30, 64, 175, 0.15)",
+        "glow-green": "0 0 24px rgba(0, 177, 64, 0.12)",
+        "glow-red": "0 0 24px rgba(225, 29, 72, 0.12)",
       },
     },
   },

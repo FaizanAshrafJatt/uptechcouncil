@@ -27,27 +27,13 @@
     --border-light: rgba(11, 18, 32, 0.10);
 
     /* Brand colors */
-    --primary: #2D5BFF;
-    --primary-hover: #1E4AE6;
+    --primary: #1E40AF;
+    --primary-hover: #1E3A8A;
     --primary-foreground: #FFFFFF;
 
     /* Accents - use sparingly */
     --accent-uk-red: #E11D48;
     --accent-pakistan-green: #00B140;
-    --accent-teal: #00C2B3;
-
-    /* Shadows - subtle */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
-    --shadow-glow-primary: 0 0 24px rgba(45, 91, 255, 0.12);
-    --shadow-glow-teal: 0 0 24px rgba(0, 194, 179, 0.08);
-
-    /* Radius */
-    --radius-sm: 8px;
-    --radius-md: 12px;
-    --radius-lg: 16px;
-    --radius-xl: 24px;
   }
 
   * {
@@ -55,8 +41,8 @@
   }
 
   body {
-    background-color: var(--bg-light);
-    color: var(--text-on-light);
+    background-color: var(--bg-light) !important;
+    color: var(--text-on-light) !important;
     font-family: var(--font-inter), system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -91,60 +77,88 @@
 
   /* Dark section utilities */
   .bg-dark {
-    background-color: var(--neutral-900);
+    background-color: #050B14 !important;
+    color: #EAF2FF !important;
   }
 
   .bg-dark-2 {
-    background-color: var(--neutral-800);
+    background-color: #061B2E !important;
   }
 
   .surface-dark {
-    background-color: var(--surface-dark);
+    background-color: rgba(255, 255, 255, 0.06) !important;
   }
 
   .surface-dark-2 {
-    background-color: var(--surface-dark-2);
+    background-color: rgba(255, 255, 255, 0.10) !important;
   }
 
   .text-on-dark {
-    color: var(--text-on-dark);
+    color: #EAF2FF !important;
   }
 
   .muted-on-dark {
-    color: var(--muted-on-dark);
+    color: rgba(234, 242, 255, 0.72) !important;
   }
 
   .muted-on-dark-subtle {
-    color: var(--muted-on-dark-subtle);
+    color: rgba(234, 242, 255, 0.55) !important;
   }
 
   .border-dark {
-    border-color: var(--border-dark);
+    border-color: rgba(234, 242, 255, 0.14) !important;
   }
 
   /* Light section utilities */
   .bg-light {
-    background-color: var(--bg-light);
+    background-color: #F6F8FC !important;
+    color: #0B1220 !important;
   }
 
   .surface-light {
-    background-color: var(--surface-light);
+    background-color: #FFFFFF !important;
   }
 
   .surface-light-2 {
-    background-color: var(--surface-light-2);
+    background-color: #F1F5F9 !important;
   }
 
   .text-on-light {
-    color: var(--text-on-light);
+    color: #0B1220 !important;
   }
 
   .muted-on-light {
-    color: var(--muted-on-light);
+    color: rgba(11, 18, 32, 0.68) !important;
   }
 
   .border-light {
-    border-color: var(--border-light);
+    border-color: rgba(11, 18, 32, 0.10) !important;
+  }
+
+  /* Primary brand color */
+  .bg-primary {
+    background-color: #1E40AF !important;
+  }
+
+  .text-primary {
+    color: #1E40AF !important;
+  }
+
+  .border-primary {
+    border-color: #1E40AF !important;
+  }
+
+  /* Accent colors */
+  .text-accent-uk-red {
+    color: #E11D48 !important;
+  }
+
+  .text-accent-pakistan-green {
+    color: #00B140 !important;
+  }
+
+  .bg-accent-pakistan-green {
+    background-color: #00B140 !important;
   }
 
   /* Background textures */
@@ -163,8 +177,9 @@
 
   .bg-hero-glow {
     background: 
-      radial-gradient(800px circle at 30% 20%, rgba(45, 91, 255, 0.15), transparent 60%),
-      radial-gradient(800px circle at 70% 50%, rgba(0, 194, 179, 0.08), transparent 60%);
+      radial-gradient(800px circle at 30% 20%, rgba(30, 64, 175, 0.15), transparent 60%),
+      radial-gradient(800px circle at 50% 50%, rgba(0, 177, 64, 0.12), transparent 60%),
+      radial-gradient(800px circle at 70% 80%, rgba(225, 29, 72, 0.1), transparent 60%);
   }
 
   .scrollbar-hide {
@@ -176,7 +191,8 @@
     display: none;
   }
 
-  @keyframes scroll {
+  /* Sponsor Marquee Animation */
+  @keyframes scroll-smooth {
     0% {
       transform: translateX(0);
     }
@@ -185,12 +201,26 @@
     }
   }
 
-  .animate-scroll {
-    animation: scroll 40s linear infinite;
+  .animate-scroll-smooth {
+    animation: scroll-smooth 50s linear infinite;
   }
 
   .animation-paused {
-    animation-play-state: paused;
+    animation-play-state: paused !important;
+  }
+
+
+  /* Premium shadows */
+  .shadow-glow-primary {
+    box-shadow: 0 0 24px rgba(30, 64, 175, 0.15);
+  }
+
+  .shadow-glow-green {
+    box-shadow: 0 0 24px rgba(0, 177, 64, 0.12);
+  }
+
+  .shadow-glow-red {
+    box-shadow: 0 0 24px rgba(225, 29, 72, 0.12);
   }
 }
 
@@ -210,5 +240,12 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .animate-aurora-1,
+  .animate-aurora-2,
+  .animate-aurora-3,
+  .animate-scroll-smooth {
+    animation: none !important;
   }
 }

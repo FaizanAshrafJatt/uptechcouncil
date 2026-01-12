@@ -21,7 +21,7 @@ export function SectionHeader({
     <div className={`mb-12 md:mb-16 ${alignClass} ${className}`}>
       <h2 className="font-heading font-bold mb-4">{title}</h2>
       {subtitle && (
-        <p className={`text-lg muted-on-light max-w-2xl ${align === "center" ? "mx-auto" : ""}`}>
+        <p className={`text-lg ${align === "center" ? "mx-auto" : ""} max-w-2xl`}>
           {subtitle}
         </p>
       )}

@@ -13,3 +13,6 @@ export const sponsorLogos = [
   "/image/Sponsor Logos/WhatsApp Image 2025-12-24 at 10.19.21 PM.jpeg",
   "/image/Sponsor Logos/WhatsApp Image 2025-12-25 at 5.42.41 PM (2).jpeg",
 ];
+
+
+

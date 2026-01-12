@@ -19,11 +19,11 @@ export function Section({ children, variant = "light", className = "" }: Section
       {variant === "dark" && (
         <>
           <div className="absolute inset-0 bg-hero-glow opacity-30 pointer-events-none" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-neutral-800/20 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#061B2E]/20 pointer-events-none" />
         </>
       )}
       <div className="relative z-10">
-        <Container className="py-section md:py-section-lg">{children}</Container>
+        <Container className="py-20 md:py-28 lg:py-32">{children}</Container>
       </div>
     </section>
   );

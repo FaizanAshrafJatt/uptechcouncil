@@ -31,11 +31,11 @@ export function TrustCards() {
         const Icon = item.icon;
         return (
           <Card key={index} hover className="h-full">
-            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-              <Icon className="w-6 h-6 text-primary" />
+            <div className="w-12 h-12 rounded-xl bg-[#1E40AF]/10 flex items-center justify-center mb-4">
+              <Icon className="w-6 h-6 text-[#1E40AF]" />
             </div>
-            <h3 className="font-heading font-semibold text-lg mb-2">{item.title}</h3>
-            <p className="muted-on-light text-sm leading-relaxed">{item.description}</p>
+            <h3 className="font-heading font-semibold text-lg mb-2 text-[#0B1220]">{item.title}</h3>
+            <p className="text-[rgba(11,18,32,0.68)] text-sm leading-relaxed">{item.description}</p>
           </Card>
         );
       })}
